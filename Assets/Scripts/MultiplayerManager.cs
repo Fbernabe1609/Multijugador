@@ -49,7 +49,8 @@ public class MultiplayerManager : NetworkBehaviour
         NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
         NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_Server_OnClientDisconnectCallback;
         NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.LoadScene("LobbyScene", LoadSceneMode.Single);
+        // NetworkManager.Singleton.SceneManager.LoadScene("LobbyScene", LoadSceneMode.Single);
+        NetworkManager.Singleton.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 
     private void NetworkManager_OnClientConnectedCallback(ulong clientId)
@@ -76,7 +77,7 @@ public class MultiplayerManager : NetworkBehaviour
         if (NetworkManager.Singleton.ConnectedClientsIds.Count >= MAX_PLAYER_AMOUNT)
         {
             connectionApprovalResponse.Approved = false;
-            connectionApprovalResponse.Reason = "La sala está llena";
+            connectionApprovalResponse.Reason = "La sala estï¿½ llena";
             return;
         }
         connectionApprovalResponse.Approved = true;

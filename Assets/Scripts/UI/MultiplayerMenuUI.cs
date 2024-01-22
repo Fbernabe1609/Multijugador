@@ -37,13 +37,22 @@ public class MultiplayerMenuUI : MonoBehaviour
 
         quickJoinButton.onClick.AddListener(() =>
         {
-            NetworkManager.Singleton.StartClient();
+            // NetworkManager.Singleton.StartClient();
+            MultiplayerManager.Instance.StartClient();
         });
 
         newLobbyButton.onClick.AddListener(() =>
         {
-            NetworkManager.Singleton.StartHost();
-            NetworkManager.Singleton.SceneManager.LoadScene("LobbyScene", LoadSceneMode.Single);
+            // MultiplayerManager.Instance.StartHost();
+            if (NetworkManager.Singleton != null)
+            {
+                NetworkManager.Singleton.StartHost();
+                NetworkManager.Singleton.SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            }
+            else
+            {
+                Debug.LogError("NetworkManager.Singleton is null");
+            }
         });
 
         codeJoinButton.onClick.AddListener(() =>

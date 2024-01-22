@@ -19,7 +19,7 @@ public class PlayerController : NetworkBehaviour
     private Animator anim;
     private PlayerData localPlayerData;
     private GameObject localSkin;
-    private int skinIndex =1;
+    private int skinIndex = 1;
     private bool right;
 
     private void Awake()
@@ -27,6 +27,8 @@ public class PlayerController : NetworkBehaviour
         right = true;
         DontDestroyOnLoad(transform.gameObject);
     }
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -52,11 +54,13 @@ public class PlayerController : NetworkBehaviour
     {
         if (right)
         {
-            localSkin.transform.rotation = Quaternion.identity;
+            // localSkin.transform.rotation = Quaternion.identity;
+            localSkin.transform.localScale = new Vector3(2, 2, 2);
         }
         else
         {
-            localSkin.transform.rotation = Quaternion.Euler(0, 180, 0);
+            // localSkin.transform.rotation = Quaternion.Euler(0, 180, 0);
+            localSkin.transform.localScale = new Vector3(-2, 2, 2);
         }
 
         if (!IsOwner)
@@ -74,7 +78,7 @@ public class PlayerController : NetworkBehaviour
 
         this.transform.SetLocalPositionAndRotation(this.transform.position, Quaternion.identity);
 
-        if (Input.GetButtonDown("Vertical") && (Mathf.Abs(rb.velocity.y) < 0.2f))
+        if (Input.GetButtonDown("Jump") && (Mathf.Abs(rb.velocity.y) < 0.2f))
         {
             rb.AddForce(transform.up * fuerzaSalto);
         }
@@ -94,7 +98,7 @@ public class PlayerController : NetworkBehaviour
 
     public void CheckFire()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Fire1"))
         {
             FireServerRpc(localSkin.transform.rotation, bulletSpawner.transform.position);
         }

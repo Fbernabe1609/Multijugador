@@ -1377,19 +1377,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 736376706}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1297409491}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &736376706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,7 +1912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &917012995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3681,13 +3669,13 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 1
     NetworkTransport: {fileID: 1323613433}
-    PlayerPrefab: {fileID: 0}
+    PlayerPrefab: {fileID: 8969137979979794876, guid: cecc83e967685fa45a9d6f0705e220c3, type: 3}
     Prefabs:
       NetworkPrefabsLists:
-      - {fileID: 11400000, guid: 6f73c3262803bc44abbcd4982c1a94d6, type: 2}
+      - {fileID: 11400000, guid: 17f3ae42900ac0949a884dbbf385b6dc, type: 2}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 1
+    ConnectionApproval: 0
     ConnectionData: 
     EnableTimeResync: 0
     TimeResyncInterval: 30
@@ -4474,7 +4462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530585434
 RectTransform:
   m_ObjectHideFlags: 0
